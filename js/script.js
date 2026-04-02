@@ -1,11 +1,40 @@
-// Portfolio JavaScript
-
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initNavHighlight();
     initScrollReveal();
     initHoverEffects();
+    initMobileMenu();
 });
+
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
+    
+    if (!menuToggle || !nav) return;
+    
+    menuToggle.addEventListener('click', () => {
+        const isActive = menuToggle.classList.toggle('active');
+        nav.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isActive);
+    });
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
 
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -16,7 +45,7 @@ function initSmoothScroll() {
             
             const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 80;
+                const headerOffset = window.innerWidth <= 768 ? 60 : 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 

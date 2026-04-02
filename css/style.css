@@ -74,6 +74,11 @@ nav a.active {
     color: var(--color-text);
 }
 
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+}
+
 nav a {
     transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -176,12 +181,75 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    :root {
+        --space-lg: 2rem;
+        --space-xl: 4rem;
+    }
+
     header {
         padding: var(--space-md);
     }
 
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--color-text);
+        margin: 2.5px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--color-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
     nav ul {
-        gap: var(--space-md);
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 1.5rem;
     }
 
     .hero {
@@ -194,6 +262,44 @@ footer {
         top: auto;
         bottom: 0;
         border-radius: 50% 50% 0 0;
+    }
+
+    .hero-intro {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-lg: 1.5rem;
+        --space-xl: 3rem;
+    }
+
+    .hero-name {
+        font-size: 3rem;
+    }
+
+    .hero-title {
+        font-size: 1.125rem;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero::before {
+        width: 50%;
+        right: -5%;
     }
 }
 
