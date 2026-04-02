@@ -292,6 +292,13 @@ section h2 {
     font-weight: 600;
 }
 
+.project-demo-video {
+    width: 100%;
+    border-radius: 6px;
+    margin: var(--space-md) 0;
+    background: #1a1a1a;
+}
+
 /* Footer */
 footer {
     text-align: center;
