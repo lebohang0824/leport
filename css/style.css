@@ -170,6 +170,65 @@ section h2 {
     margin-bottom: var(--space-md);
 }
 
+/* Project Cards */
+.project-list {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.project-card {
+    background: var(--color-surface);
+    border: 1px solid #e8e4df;
+    border-radius: 8px;
+    padding: var(--space-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.project-description {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    max-width: 640px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: gap 0.2s ease;
+}
+
+.project-link:hover {
+    gap: 12px;
+}
+
+.project-link svg {
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover svg {
+    transform: translate(2px, -2px);
+}
+
 /* Footer */
 footer {
     text-align: center;
