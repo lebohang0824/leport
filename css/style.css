@@ -229,6 +229,69 @@ section h2 {
     transform: translate(2px, -2px);
 }
 
+/* Doppler Card */
+.project-card-doppler {
+    border-left: 3px solid var(--color-accent);
+}
+
+.how-it-works {
+    background: #f5f3f0;
+    border-radius: 6px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+}
+
+.how-it-works-title {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.how-it-works-list {
+    list-style: none;
+    counter-reset: doppler-steps;
+}
+
+.how-it-works-list li {
+    counter-increment: doppler-steps;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.how-it-works-list li:last-child {
+    margin-bottom: 0;
+}
+
+.how-it-works-list li::before {
+    content: counter(doppler-steps);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--color-accent);
+    color: var(--color-surface);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-it-works-list li strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
 /* Footer */
 footer {
     text-align: center;
