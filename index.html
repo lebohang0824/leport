@@ -10,13 +10,17 @@
     <meta property="og:description" content="Personal portfolio website">
     <meta property="og:type" content="website">
     <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
+        <a href="#" class="logo">Lebohang.</a>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -25,9 +29,13 @@
     </header>
 
     <main>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I'm a software developer passionate about building great products.</p>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="hero-label">Hello, I'm</p>
+                <h1 class="hero-name">Lebohang</h1>
+                <p class="hero-title">Software Developer &amp; Creative Technologist</p>
+                <p class="hero-intro">I craft elegant digital experiences that blend functionality with thoughtful design. Passionate about building products that make a difference.</p>
+            </div>
         </section>
 
         <section id="about">
