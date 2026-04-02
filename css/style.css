@@ -70,6 +70,14 @@ nav a:hover {
     color: var(--color-text);
 }
 
+nav a.active {
+    color: var(--color-text);
+}
+
+nav a {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -187,4 +195,32 @@ footer {
         bottom: 0;
         border-radius: 50% 50% 0 0;
     }
+}
+
+/* Scroll reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hero.reveal {
+    transition-delay: 0s;
+}
+
+#about.reveal {
+    transition-delay: 0.1s;
+}
+
+#projects.reveal {
+    transition-delay: 0.2s;
+}
+
+#contact.reveal {
+    transition-delay: 0.3s;
 }
